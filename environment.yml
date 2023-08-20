@@ -1,7 +1,5 @@
 name: streamlit_prophet
 channels:
-  - anaconda
-  - conda-forge
   - defaults
 dependencies:
   - matplotlib-base=3.5.1=py37h4a79c79_0
