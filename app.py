@@ -3,8 +3,8 @@ import yfinance as yf
 from datetime import date
 import pandas as pd
 
-from fbprophet import Prophet
-from fbprophet.plot import plot_plotly, plot_components_plotly
+# from fbprophet import Prophet
+# from fbprophet.plot import plot_plotly, plot_components_plotly
 from plotly import graph_objs as go
 
 DATA_INICIO = "2017-01-01"
@@ -76,19 +76,19 @@ df_treino = df_valores[["Date", "Close"]]
 # renomear colunas
 df_treino = df_treino.rename(columns={"Date": "ds", "Close": "y"})
 
-modelo = Prophet()
-modelo.fit(df_treino)
+# modelo = Prophet()
+# modelo.fit(df_treino)
 
-futuro = modelo.make_future_dataframe(periods=n_dias, freq="B")
-previsao = modelo.predict(futuro)
+# futuro = modelo.make_future_dataframe(periods=n_dias, freq='B')
+# previsao = modelo.predict(futuro)
 
-st.subheader("Previsão")
-st.write(previsao[["ds", "yhat", "yhat_lower", "yhat_upper"]].tail(n_dias))
+# st.subheader('Previsão')
+# st.write(previsao[['ds', 'yhat','yhat_lower','yhat_upper' ]].tail(n_dias))
 
 # grafico
-grafico1 = plot_plotly(modelo, previsao)
-st.plotly_chart(grafico1)
+# grafico1 = plot_plotly(modelo, previsao)
+# st.plotly_chart(grafico1)
 
 # grafico2
-grafico2 = plot_components_plotly(modelo, previsao)
-st.plotly_chart(grafico2)
+# grafico2 = plot_components_plotly(modelo, previsao)
+# st.plotly_chart(grafico2)
