@@ -53,7 +53,7 @@ st.write(df_valores.tail(10))
 
 # Criar gráfico
 
-st.subheader("Gráfico de preços")
+st.subheader("Gráfico de preços:")
 fig = go.Figure()
 fig.add_trace(
     go.Scatter(
